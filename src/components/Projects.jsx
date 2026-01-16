@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom'; // Removed unused import
+import { useNavigate } from 'react-router-dom'; 
 import './Projects.css';
-import defaultProjectImg from '../assets/team-collaboration.png'; 
+// import defaultProjectImg from '../assets/team-collaboration.png'; 
 
 const Projects = () => {
-  // const navigate = useNavigate(); // Removed unused hook
+  const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
 
   const handleKnowMore = () => {
@@ -14,6 +14,7 @@ const Projects = () => {
   const closeModal = () => {
     setShowModal(false);
   };
+
   
   const projectData = [
     {
@@ -23,6 +24,7 @@ const Projects = () => {
       link: "https://www.boomerangs-example.com", 
       color: "#2c3e50"
     },
+    
     {
       title: "Landscape Realty",
       category: "Real Estate",
@@ -85,7 +87,6 @@ const Projects = () => {
           {projectData.map((project, index) => (
             <div key={index} className="project-card group">
               <div className="project-image-wrapper" style={{ backgroundColor: project.color }}>
-                {/* <img src={defaultProjectImg} alt={project.title} /> */}
                 <span className="placeholder-logo-text">{project.title.charAt(0)}</span>
               </div>
               <div className="project-content">
@@ -119,19 +120,22 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Coming Soon Modal - Now using standard CSS classes */}
+      {/* Coming Soon Modal */}
       {showModal && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-body">
-              <div className="modal-icon-wrapper">
-                <svg className="modal-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={closeModal}>
+          <div className="bg-white p-8 rounded-xl max-w-md mx-4 shadow-2xl animate-in fade-in zoom-in duration-200" onClick={(e) => e.stopPropagation()}>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="modal-title">Coming Soon</h3>
-              <p className="modal-text">Exciting project content updates will be available professionally soon. Stay tuned!</p>
-              <button onClick={closeModal} className="modal-close-btn">
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Coming Soon</h3>
+              <p className="text-gray-600 mb-6">Exciting project content updates will be available professionally soon. Stay tuned!</p>
+              <button
+                onClick={closeModal}
+                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-200 font-medium w-full"
+              >
                 Got it
               </button>
             </div>
