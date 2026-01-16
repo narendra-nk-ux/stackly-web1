@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import teamImage from '../assets/team-collaboration.png';
-import whoWeAreImg from '../assets/who-we-are.jpg';
 import ourSkills from '../assets/our-skills.jpg';
 import contactUs from '../assets/contact us.jpg';
 import './Hero.css';
+
+const whoWeAreImg = teamImage;
 
 const Hero = () => {
   const navigate = useNavigate();

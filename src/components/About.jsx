@@ -1,8 +1,15 @@
 import React from 'react';
 import './About.css';
+
 import teamImage from '../assets/team-collaboration.png';
-import whoWeAreImg from '../assets/who-we-are.jpg';
-import ourSkills from '../assets/our-skills.jpg';
+
+const ourSkills = teamImage; 
+
+// 3. Assign placeholders for other sections
+const officeImage = teamImage;
+const missionImage = teamImage;
+const futureImage = teamImage;
+const whoWeAreImg = teamImage;
 
 const About = () => {
   return (
@@ -105,13 +112,14 @@ const About = () => {
       <section className="about-future">
         <div className="grid-two-col">
           <div className="image-wrapper">
+            {/* Using ourSkills (which is currently teamImage) to prevent crash */}
             <img src={ourSkills} alt="Future Technology Abstract" className="image" />
           </div>
           <div className="text-content">
             <h2 className="section-title">The Future of Stackly</h2>
             <p>
               We are looking ahead to 2030 with bold ambitions. Our roadmap includes integrating 
-              <strong>advanced AI-driven analytics</strong> to predict workflow bottlenecks before they happen.
+              <strong> advanced AI-driven analytics</strong> to predict workflow bottlenecks before they happen.
             </p>
             <ul className="future-list">
               <li><strong>AI Integration:</strong> Smart assistants to automate 40% of manual tasks.</li>
