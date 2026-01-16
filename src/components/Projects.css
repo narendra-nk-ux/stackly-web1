@@ -1,0 +1,194 @@
+/* --- Variables --- */
+:root {
+  --bg-dark: #111111;
+  --card-bg: #1a1a1a;
+  --accent-neon: #D4FF00; 
+  --text-white: #fff;
+  --text-gray: #a1a1aa;
+}
+
+.projects-section {
+  background-color: var(--bg-dark);
+  padding: 100px 0;
+  color: var(--text-white);
+  position: relative;
+}
+
+/* --- Header Styling --- */
+.projects-header {
+  margin-bottom: 60px;
+  max-width: 600px;
+  
+}
+
+.subtitle-neon {
+  color: var(--accent-neon);
+  font-family: monospace;
+  letter-spacing: 3px;
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.section-heading-light {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Hollow Text Effect */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  color: transparent;
+  font-style: italic;
+}
+
+.projects-intro {
+  color: var(--text-gray);
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+/* --- Grid Layout --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+/* --- Project Card --- */
+.project-card {
+  background-color: var(--card-bg);
+  border: 1px solid #333;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-neon);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Image Placeholder  */
+.project-image-wrapper {
+  height: 180px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.placeholder-logo-text {
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.2);
+}
+
+/* Content */
+.project-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-category {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--accent-neon);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.project-desc {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1; 
+}
+
+/* Link Button */
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.project-link-btn:hover {
+  color: var(--accent-neon);
+}
+
+/* --- Know More Button --- */
+.projects-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.know-more-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.4s ease;
+}
+
+.know-more-btn:hover {
+  background-color: var(--accent-neon);
+  border-color: var(--accent-neon);
+  color: #000; 
+  padding-right: 25px;
+}
+
+.btn-icon {
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.know-more-btn:hover .btn-icon {
+  background-color: #000;
+  color: var(--accent-neon);
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .section-heading-light {
+    font-size: 2.5rem;
+  }
+}
+
+
